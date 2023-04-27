@@ -13,6 +13,7 @@ Some sample code for using RabbitMQ in python.
 |      [Fanout](./fanout/)      |         Using fanout exchange type          |
 | [Direct Logs](./direct-logs/) |          Create direct logs system          |
 |       [Topic](./topic/)       |          Using topic exchange type          |
+|         [RPC](./RPC/)         |          The remote procedure call          |
 
 #
 
