@@ -9,8 +9,8 @@ channel = connection.channel()
 channel.queue_declare(queue='rpc-queue')
 
 
-def callable(ch, method, properties, body: str):
-    print('Processing requests...')
+def callable(ch, method, properties, body: bytes):
+    print(f'Processing the number {body.decode()} request...')
     number = int(body) if body.isdigit() else 1
     sleep(3)
     response = str(number + 1)
@@ -23,6 +23,7 @@ def callable(ch, method, properties, body: str):
         body=response,
     )
     ch.basic_ack(delivery_tag=method.delivery_tag)
+    print('Finished.')
 
 
 channel.basic_qos(prefetch_count=1)
