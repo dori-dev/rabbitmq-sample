@@ -19,8 +19,8 @@ channel.queue_bind(
 )
 
 
-def callback(channel, method, properties, body):
-    print(body)
+def callback(channel, method, properties, body: bytes):
+    print(body.decode())
 
 
 print('Waiting for log...')

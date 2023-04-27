@@ -21,7 +21,7 @@ channel.queue_bind(
 
 def callback(channel, method, properties, body: bytes):
     with open('important.log', 'a') as log_file:
-        log_file(f'{body.decode()}\n')
+        log_file.write(f'{body.decode()}\n')
 
 
 print('Waiting for log...')
